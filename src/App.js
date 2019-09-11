@@ -16,9 +16,23 @@ class App extends React.Component {
         <ul className="pokemon__list">
           {this.state.pokemons.map((pokemon, index) => {
             return (
-              <li className="pokemon__item" key={index}>
+              <li className="pokemon__item" key={pokemon.id}>
                 <div className="pokemon__item-containter">
-                  <div>{pokemon.name}</div>
+                  <div className="item__pic-container">
+                    <img src={pokemon.url} alt={pokemon.name} />
+                  </div>
+                  <h2>{pokemon.name}</h2>
+                  <ul>
+                    {pokemon.types.map((type,index)=>{
+                      return (
+                        <li key={index}>
+                          <div>
+                            {type}
+                          </div>
+                        </li>
+                      )
+                    })}
+                  </ul>
                 </div>
               </li>
             )
