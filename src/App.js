@@ -19,14 +19,14 @@ class App extends React.Component {
               <li className="pokemon__item" key={pokemon.id}>
                 <div className="pokemon__item-containter">
                   <div className="item__pic-container">
-                    <img src={pokemon.url} alt={pokemon.name} />
+                    <img className="item__pic" src={pokemon.url} alt={pokemon.name} />
                   </div>
-                  <h2>{pokemon.name}</h2>
+                  <h2 className="item__title">{pokemon.name}</h2>
                   <ul>
                     {pokemon.types.map((type,index)=>{
                       return (
                         <li key={index}>
-                          <div>
+                          <div className="item__type-container">
                             {type}
                           </div>
                         </li>
