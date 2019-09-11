@@ -1,0 +1,16 @@
+.pokemon__list{
+padding:0;
+margin:30px;
+height:100vh;
+list-style:none;
+display:flex;
+justify-content: center;
+flex-flow:row wrap;
+justify-content:space-between;
+align-content: flex-start;
+
+}
+.pokemon__item{
+    background-color:rgb(226, 241, 240);
+    margin:10px;    
+}

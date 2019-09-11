@@ -1,0 +1,39 @@
+.pokemon__item-containter{
+    width:200px;
+    height:340px;
+    border:1px solid black;
+    border-radius: 10px;    
+}
+
+.item__pic-container{
+    width:180;
+
+}
+.item__pic{
+    width:100%;
+}
+
+.item__title{
+    text-transform:capitalize;
+    border-top:1px solid black;
+    border-bottom:1px solid black;
+    padding:15px 0;
+}
+
+.type__list{
+    margin:0;
+    padding:0;
+    list-style:none;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size:14px;
+    text-transform:uppercase;
+}
+
+.item__type-container{
+    padding:5px;
+    background-color:grey;
+    border-radius:10px;
+    color:white;
+}
