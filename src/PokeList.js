@@ -10,7 +10,7 @@ class PokeList extends React.Component {
                 {this.props.pokemons.map(pokemon => {
                     return (
                         <li  className="pokemon__item " key={pokemon.id} >
-                            <Pokemon  handleClick={this.props.handleClick} id={pokemon.id} url={pokemon.url} name={pokemon.name} types={pokemon.types} />
+                            <Pokemon isFav = {this.props.isFav} handleClick={this.props.handleClick} id={pokemon.id} url={pokemon.url} name={pokemon.name} types={pokemon.types} />
                         </li>
                     )
                 })}
@@ -21,6 +21,7 @@ class PokeList extends React.Component {
 }
 
 PokeList.propTypes = {
+    isFav: PropTypes.func.isRequired,
     handleClick: PropTypes.func.isRequired,
     pokemons: PropTypes.arrayOf(PropTypes.object).isRequired
   }
