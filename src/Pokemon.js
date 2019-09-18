@@ -5,7 +5,7 @@ import './Pokemon.scss';
 class Pokemon extends React.Component {
     render() {
         return (
-            <div className="pokemon__item-containter">
+            <div onClick= {this.props.handleClick}  id={this.props.id} className="pokemon__item-containter" >
                 <div className="item__pic-container">
                     <img className="item__pic" src={this.props.url} alt={this.props.name} />
                 </div>
@@ -27,6 +27,7 @@ class Pokemon extends React.Component {
 }
 
 Pokemon.propTypes = {
+    // handleClick: PropTypes.func.isRequired,
     url: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     types: PropTypes.arrayOf(PropTypes.string).isRequired

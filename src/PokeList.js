@@ -6,11 +6,11 @@ import Pokemon from './Pokemon';
 class PokeList extends React.Component {
     render() {
         return (
-            <ol className="pokemon__list">
+            <ol className="pokemon__list" >
                 {this.props.pokemons.map(pokemon => {
                     return (
-                        <li className="pokemon__item" key={pokemon.id}>
-                            <Pokemon url={pokemon.url} name={pokemon.name} types={pokemon.types} />
+                        <li  className="pokemon__item " key={pokemon.id} >
+                            <Pokemon  handleClick={this.props.handleClick} id={pokemon.id} url={pokemon.url} name={pokemon.name} types={pokemon.types} />
                         </li>
                     )
                 })}
@@ -21,6 +21,7 @@ class PokeList extends React.Component {
 }
 
 PokeList.propTypes = {
+    handleClick: PropTypes.func.isRequired,
     pokemons: PropTypes.arrayOf(PropTypes.object).isRequired
   }
   
