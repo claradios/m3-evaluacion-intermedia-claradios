@@ -13,22 +13,38 @@ class App extends React.Component {
 
     this.state = {
       pokemons: pokemons,
-      id: ''
+      id: '',
+      favs:[]
     }
-    this.handleClick=this.handleClick.bind(this);
+      this.getFavPokemon = this.getFavPokemon.bind(this);
   }
-  handleClick(event){ 
-    const currentId = event.currentTarget.id;
-    this.setState({
-      id: currentId
-    })
 
+
+  getFavPokemon(event) {
+    const favID = parseInt(event.currentTarget.id);
+    const futureFav = this.state.pokemons.find(item => item.id === favID);
+
+    this.setState(prevState => {
+      const newFavs = [...prevState.favs];
+      const result = newFavs.findIndex(item => item.id === favID);
+
+      if (result < 0 ) {
+        newFavs.push(futureFav);
+      } else {
+        newFavs.splice(result,1);
+      }
+      localStorage.setItem('favs', JSON.stringify(newFavs));
+      return {
+        favs: newFavs
+      }
+    });
   }
+
   render() {
     return (
       <div className="App">
         <h1 className="app__title">Mi lista de pokemon</h1>
-        <PokeList pokemons={this.state.pokemons} handleClick={this.handleClick}/>
+        <PokeList pokemons={this.state.pokemons} handleClick={this.getFavPokemon}/>
       </div>
     );
   }
