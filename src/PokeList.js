@@ -30,7 +30,8 @@ class PokeList extends React.Component {
 PokeList.propTypes = {
     isFav: PropTypes.func.isRequired,
     handleClick: PropTypes.func.isRequired,
-    pokemons: PropTypes.arrayOf(PropTypes.object).isRequired
+    pokemons: PropTypes.arrayOf(PropTypes.object).isRequired,
+    value: PropTypes.string.isRequired
 }
 
 export default PokeList;
