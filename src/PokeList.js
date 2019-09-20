@@ -5,12 +5,13 @@ import Pokemon from './Pokemon';
 
 class PokeList extends React.Component {
     render() {
+       console.log(this.props.value);
         return (
             <React.Fragment>
                 <input type="text" onChange={this.props.getInput}></input>
                 <ol className="pokemon__list" >
                     {this.props.pokemons
-                    // .filter(pokemon=>pokemon.name===this.props.value)
+                    .filter(pokemon=>pokemon.name.includes(this.props.value))
                     .map(pokemon => {
                         return (
                             <li className="pokemon__item " key={pokemon.id} >

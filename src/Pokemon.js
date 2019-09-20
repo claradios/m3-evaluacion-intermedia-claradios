@@ -4,10 +4,11 @@ import './Pokemon.scss';
 
 class Pokemon extends React.Component {
     render() {
+        
         return (
             <div onClick= {this.props.handleClick}  id={this.props.id} className={`pokemon__item-containter ${this.props.isFav(this.props.id)}`} >
                 <div className="item__pic-container">
-                    <img className="item__pic" src={this.props.url} alt={this.props.name} />
+                    <img className="item__pic" src={this.props.url} alt={`vista frontal de ${this.props.name}`} />
                 </div>
                 <h2 className="item__title">{this.props.name}</h2>
                 <ul className="type__list">

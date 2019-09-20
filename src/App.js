@@ -73,11 +73,11 @@ class App extends React.Component {
   }
   
   render() {
-    const {pokemons} = this.state;
+    const {pokemons,value} = this.state;
     return (
       <div className="App">
         <h1 className="app__title">Mi lista de pokemon</h1>
-        <PokeList value={pokemons.value} getInput={this.getInput} pokemons={pokemons} handleClick={this.getFavPokemon} isFav={this.isFav}/>
+        <PokeList value={value} getInput={this.getInput} pokemons={pokemons} handleClick={this.getFavPokemon} isFav={this.isFav}/>
       </div>
     );
   }
